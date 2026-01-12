@@ -149,7 +149,7 @@ try:
     EMAIL_HOST = config('EMAIL_HOST', default='smtp.gmail.com')
     EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
     EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
-    EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='karthimeme11@gmail.com')
+    EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
     EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 except:
     # Fallback settings if python-decouple fails
@@ -157,11 +157,8 @@ except:
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
-    EMAIL_HOST_USER = 'karthimeme11@gmail.com'
+    EMAIL_HOST_USER = ''
     EMAIL_HOST_PASSWORD = ''  # set this manually
 
-# For development/testing, use the console backend to see emails in the console
-if DEBUG:
-    # This will print emails to the console instead of sending them
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
