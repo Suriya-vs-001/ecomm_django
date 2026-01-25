@@ -165,3 +165,10 @@ if DEBUG:
     # This will print emails to the console instead of sending them
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+
+# Razorpay Settings
+# https://razorpay.com/docs/payment-gateway/server-integration/python/
+RAZORPAY_API_KEY = config('RAZORPAY_API_KEY', default='')
+RAZORPAY_API_SECRET = config('RAZORPAY_API_SECRET', default='')
+
+
