@@ -54,7 +54,7 @@ Follow these steps to run the project locally.
 ### 2. Installation
 Clone the repo and enter the directory:
 ```bash
-git clone <your-repo-url>
+git clone <url>
 cd Ecommerceproject
 ```
 
