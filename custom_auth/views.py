@@ -101,7 +101,7 @@ The Support Team
             messages.warning(request, 'Email not found/exist')
             return redirect('password_regenerate')
     return render(request, '404.html')
-
+#use abstract user.
 class CustomPasswordResetView(PasswordResetView):
     template_name = 'registration/forgotpassword.html'
     email_template_name = 'registration/password_reset_email.html'
