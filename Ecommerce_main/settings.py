@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'offers',
     'promotions',  # Promotions and coupons
     'support',     # Customer support
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -99,7 +100,26 @@ DATABASES = {
         'PASSWORD': 'your_password',
         'HOST': 'localhost',
         'PORT': '5432',
+    },
+    'orders_db': {
+        'ENGINE': 'djongo',
+        'NAME': 'ecommerce_orders_db',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'mongodb://localhost:27017'
+        }
     }
+}
+
+DATABASE_ROUTERS = ['Ecommerce_main.db_router.OrdersDBRouter']
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'custom_auth.authentication.CustomSessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ]
 }
 
 
